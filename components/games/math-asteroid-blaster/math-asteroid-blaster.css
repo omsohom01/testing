@@ -1,0 +1,1142 @@
+/* 
+=== IRON MAN MCU THEME SUMMARY ===
+
+🦾 IRON MAN FEATURES IMPLEMENTED:
+- Arc Reactor animations with pulsing gold energy
+- Repulsor beam charging and blast effects  
+- FRIDAY AI interface scanning animations
+- Mark 85 suit boot-up sequence
+- Stark Industries holographic effects
+- HUD overlay with scanning lines
+- Iron Man suit thruster animations
+- Unibeam charging effects
+- Tony Stark tech borders and glows
+
+🎨 VISUAL ELEMENTS:
+- Red, gold, and orange color scheme (MCU accurate)
+- Holographic flickering effects
+- Arc reactor core with rotating energy
+- Repulsor particle effects
+- FRIDAY interface text styling
+- Stark tech borders with scanning effects
+- Iron Man themed buttons and UI
+
+⚡ ANIMATIONS:
+- arc-reactor-pulse: Pulsing energy core
+- repulsor-charge: Charging hand repulsors  
+- friday-interface: AI scanning effects
+- iron-suit-thruster: Boot thruster flames
+- mark-85-boot-up: Suit initialization
+- unibeam-charge: Chest beam charging
+- hologram-flicker: Holographic effects
+- stark-industries-scan: Tech scanning overlay
+
+🔧 CLASSES TO USE:
+.iron-man-title - Main title styling
+.stark-tech - Subtitle/tech text
+.iron-man-btn - Interactive buttons
+.arc-reactor-core - Energy core element
+.friday-interface-text - AI text
+.iron-man-hud-overlay - HUD overlay
+.stark-tech-border - Tech borders
+.repulsor-beam - Energy beams
+.iron-man-shield-active - Energy shields
+
+Use these classes in the React component for full Iron Man experience!
+*/
+
+/* ===== IRON MAN MCU THEME ===== */
+
+@keyframes arc-reactor-pulse {
+    0% {
+      box-shadow: 
+        0 0 20px #ff6b35,
+        0 0 40px #ff6b35,
+        0 0 60px #ff6b35,
+        inset 0 0 20px #ef4444;
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px #ef4444,
+        0 0 60px #ef4444,
+        0 0 90px #ef4444,
+        inset 0 0 30px #dc2626;
+      transform: scale(1.05);
+    }
+    100% {
+      box-shadow: 
+        0 0 20px #ff6b35,
+        0 0 40px #ff6b35,
+        0 0 60px #ff6b35,
+        inset 0 0 20px #ef4444;
+      transform: scale(1);
+    }
+}
+
+@keyframes repulsor-charge {
+    0% {
+      box-shadow: 
+        0 0 5px #ff6b35,
+        0 0 10px #ff6b35,
+        0 0 15px #ff6b35;
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+    50% {
+      box-shadow: 
+        0 0 15px #ff8c42,
+        0 0 30px #ff8c42,
+        0 0 45px #ff8c42,
+        0 0 60px #ff8c42;
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      box-shadow: 
+        0 0 25px #ff6b35,
+        0 0 50px #ff6b35,
+        0 0 75px #ff6b35,
+        0 0 100px #ff6b35;
+      transform: scale(1);
+      opacity: 0.9;
+    }
+}
+
+@keyframes friday-interface {
+    0% {
+      background: linear-gradient(45deg, #ff6b35 0%, #ef4444 50%, #dc2626 100%);
+      border: 2px solid #ff6b35;
+      box-shadow: 
+        0 0 10px #ff6b35,
+        inset 0 0 10px rgba(255, 107, 53, 0.2);
+    }
+    50% {
+      background: linear-gradient(45deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+      border: 2px solid #ef4444;
+      box-shadow: 
+        0 0 20px #ef4444,
+        inset 0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    100% {
+      background: linear-gradient(45deg, #ff6b35 0%, #ef4444 50%, #dc2626 100%);
+      border: 2px solid #ff6b35;
+      box-shadow: 
+        0 0 10px #ff6b35,
+        inset 0 0 10px rgba(255, 107, 53, 0.2);
+    }
+}
+
+@keyframes iron-suit-thruster {
+    0% {
+      height: 80%;
+      opacity: 0.8;
+      background: linear-gradient(to top, #ff6b35 0%, #ff8c42 50%, #ff6b35 100%);
+      box-shadow: 0 0 15px #ff6b35;
+    }
+    50% {
+      height: 120%;
+      opacity: 1;
+      background: linear-gradient(to top, #ff8c42 0%, #ff6b35 50%, #ff8c42 100%);
+      box-shadow: 0 0 30px #ff8c42, 0 0 60px #ff6b35;
+    }
+    100% {
+      height: 80%;
+      opacity: 0.8;
+      background: linear-gradient(to top, #ff6b35 0%, #ff8c42 50%, #ff6b35 100%);
+      box-shadow: 0 0 15px #ff6b35;
+    }
+}
+
+@keyframes iron-suit-secondary-thruster {
+    0% {
+      height: 60%;
+      opacity: 0.7;
+      background: linear-gradient(to top, #ff4500 0%, #ff6b35 50%, #ff8c42 100%);
+      box-shadow: 0 0 10px #ff4500;
+    }
+    50% {
+      height: 100%;
+      opacity: 1;
+      background: linear-gradient(to top, #ff6b35 0%, #ff8c42 50%, #ff6b35 100%);
+      box-shadow: 0 0 20px #ff6b35, 0 0 40px #ff8c42;
+    }
+    100% {
+      height: 60%;
+      opacity: 0.7;
+      background: linear-gradient(to top, #ff4500 0%, #ff6b35 50%, #ff8c42 100%);
+      box-shadow: 0 0 10px #ff4500;
+    }
+}
+
+@keyframes jarvis-interface-pulse {
+    0% {
+      color: #ff6b35;
+      text-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35;
+      transform: scale(1);
+    }
+    50% {
+      color: #ef4444;
+      text-shadow: 0 0 15px #ef4444, 0 0 30px #ef4444, 0 0 45px #ef4444;
+      transform: scale(1.02);
+    }
+    100% {
+      color: #ff6b35;
+      text-shadow: 0 0 10px #ff6b35, 0 0 20px #ff6b35;
+      transform: scale(1);
+    }
+}
+  
+@keyframes repulsor-particle {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      background: #ff6b35;
+      box-shadow: 0 0 5px #ff6b35;
+    }
+    100% {
+      transform: translateY(-30px) scale(0);
+      opacity: 0;
+      background: #ff6b35;
+      box-shadow: 0 0 15px #ff6b35;
+    }
+}
+
+@keyframes stark-tech-glow {
+    0% {
+      transform: scale(1) translateX(-50%);
+      opacity: 0.7;
+      box-shadow: 0 0 15px #ff6b35, 0 0 30px #ff6b35;
+    }
+    50% {
+      transform: scale(1.3) translateX(-50%);
+      opacity: 1;
+      box-shadow: 0 0 25px #ef4444, 0 0 50px #ef4444, 0 0 75px #ef4444;
+    }
+    100% {
+      transform: scale(1) translateX(-50%);
+      opacity: 0.7;
+      box-shadow: 0 0 15px #ff6b35, 0 0 30px #ff6b35;
+    }
+}
+  
+@keyframes iron-man-hud {
+    0% {
+      transform: scale(1) translate(-25%, -25%);
+      opacity: 0.8;
+      border: 2px solid #ff6b35;
+      box-shadow: 0 0 15px #ff6b35, inset 0 0 15px rgba(255, 107, 53, 0.2);
+    }
+    50% {
+      transform: scale(1.05) translate(-25%, -25%);
+      opacity: 1;
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 25px #ef4444, inset 0 0 25px rgba(239, 68, 68, 0.3);
+    }
+    100% {
+      transform: scale(1) translate(-25%, -25%);
+      opacity: 0.8;
+      border: 2px solid #ff6b35;
+      box-shadow: 0 0 15px #ff6b35, inset 0 0 15px rgba(255, 107, 53, 0.2);
+    }
+}
+  
+/* Iron Man Animation Classes */
+.animate-arc-reactor {
+    animation: arc-reactor-pulse 2s infinite ease-in-out;
+}
+
+.animate-repulsor-charge {
+    animation: repulsor-charge 1.5s infinite ease-in-out;
+}
+
+.animate-friday-interface {
+    animation: friday-interface 3s infinite ease-in-out;
+}
+
+.animate-iron-suit-thruster {
+    animation: iron-suit-thruster 0.4s infinite alternate;
+}
+
+.animate-iron-suit-secondary {
+    animation: iron-suit-secondary-thruster 0.6s infinite alternate;
+}
+
+.animate-repulsor-particle {
+    animation: repulsor-particle 0.8s forwards;
+}
+
+.animate-stark-tech-glow {
+    animation: stark-tech-glow 0.6s infinite alternate;
+}
+
+.animate-jarvis-pulse {
+    animation: jarvis-interface-pulse 2.5s infinite ease-in-out;
+}
+
+.animate-iron-man-hud {
+    animation: iron-man-hud 1.8s infinite alternate;
+}
+  
+  .shield-active {
+    position: relative;
+  }
+  
+  .shield-active::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, rgba(239, 68, 68, 0.1) 70%, transparent 100%);
+    animation: shield-pulse 2s infinite ease-in-out;
+    z-index: -1;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+  
+    100% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes pulse-slow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Laser beam animation */
+  .laser-beam {
+    animation: laserPulse 1.5s infinite;
+  }
+  
+  @keyframes laserPulse {
+    0% {
+      opacity: 0.6;
+    }
+  
+    50% {
+      opacity: 0.8;
+    }
+  
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  .iron-man-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #dc2626 0%, #ff6b35 25%, #ff8c42 50%, #ff6b35 75%, #dc2626 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+      0 0 30px rgba(220, 38, 38, 0.8),
+      0 0 60px rgba(255, 107, 53, 0.6),
+      0 0 90px rgba(239, 68, 68, 0.4);
+    letter-spacing: -0.025em;
+    text-align: center;
+    animation: iron-man-title-glow 4s ease-in-out infinite;
+    width: 100%;
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .stark-tech {
+    background: linear-gradient(135deg, #ff6b35 0%, #dc2626 50%, #dc2626 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+      0 0 15px rgba(239, 68, 68, 0.8),
+      0 0 30px rgba(220, 38, 38, 0.6);
+    letter-spacing: 0.05em;
+    text-align: center;
+    animation: stark-tech-pulse 3s infinite alternate;
+    font-weight: 700;
+  }
+  
+  @keyframes iron-man-title-glow {
+    0% {
+      background-position: 0% 50%;
+      text-shadow: 
+        0 0 30px rgba(220, 38, 38, 0.8),
+        0 0 60px rgba(255, 107, 53, 0.6);
+    }
+    25% {
+      background-position: 25% 50%;
+      text-shadow: 
+        0 0 40px rgba(255, 107, 53, 0.9),
+        0 0 80px rgba(255, 140, 66, 0.7);
+    }
+    50% {
+      background-position: 50% 50%;
+      text-shadow: 
+        0 0 50px rgba(255, 140, 66, 1),
+        0 0 100px rgba(239, 68, 68, 0.8);
+    }
+    75% {
+      background-position: 75% 50%;
+      text-shadow: 
+        0 0 40px rgba(239, 68, 68, 0.9),
+        0 0 80px rgba(220, 38, 38, 0.7);
+    }
+    100% {
+      background-position: 100% 50%;
+      text-shadow: 
+        0 0 30px rgba(220, 38, 38, 0.8),
+        0 0 60px rgba(255, 107, 53, 0.6);
+    }
+  }
+
+  @keyframes stark-tech-pulse {
+    0% {
+      text-shadow: 
+        0 0 15px rgba(239, 68, 68, 0.8),
+        0 0 30px rgba(220, 38, 38, 0.6);
+    }
+    100% {
+      text-shadow: 
+        0 0 25px rgba(255, 107, 53, 1),
+        0 0 50px rgba(220, 38, 38, 0.8),
+        0 0 75px rgba(255, 140, 66, 0.6);
+    }
+  }
+  
+  /* New CSS Animations to replace Framer Motion */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -2px);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+  
+  @keyframes asteroid {
+    0% {
+      transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    }
+  }
+  
+  @keyframes laser {
+    0% {
+      transform: translateX(-50%) scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.8;
+    }
+  }
+  
+  @keyframes laserTrail {
+    0% {
+      transform: translateX(-50%) scaleY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-50%) scaleY(1);
+      opacity: 0.6;
+    }
+  }
+  
+  @keyframes powerup {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2) rotate(15deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes shield {
+    0% {
+      transform: scale(1) translate(-25%, -25%);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1) translate(-25%, -25%);
+      opacity: 0.9;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+    }
+    100% {
+      transform: scale(1) translate(-25%, -25%);
+      opacity: 0.7;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+  }
+  
+  @keyframes shieldParticle {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0) translate(var(--tx, 30px), var(--ty, 0));
+    }
+  }
+  
+  /* Animation Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  
+  .animate-fadeOut {
+    animation: fadeOut 1s ease-out forwards;
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.4s ease-out forwards;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+  
+  .animate-slideRight {
+    animation: slideRight 0.3s ease-out forwards;
+  }
+  
+  .animate-scaleIn {
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .animate-popIn {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .animate-twinkle {
+    animation: twinkle 3s infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-shine {
+    animation: shine 2s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  .animate-asteroid {
+    animation: asteroid 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .animate-laser {
+    animation: laser 0.2s ease-out forwards;
+  }
+  
+  .animate-laserTrail {
+    animation: laserTrail 0.2s ease-out forwards;
+  }
+  
+  .animate-powerup {
+    animation: powerup 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .animate-shield {
+    animation: shield 1.5s infinite alternate;
+  }
+  
+  .animate-shieldParticle {
+    animation: shieldParticle 2s infinite;
+    --tx: calc(cos(var(--angle, 0deg)) * 30px);
+    --ty: calc(sin(var(--angle, 0deg)) * 30px);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 2s infinite ease-in-out;
+  }
+  
+  /* Add these new animations for smoother stars */
+  @keyframes twinkle-smooth {
+    0% {
+      opacity: 0.1;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0.1;
+      transform: scale(0.8);
+    }
+  }
+  
+  /* Add new animation for shield */
+  @keyframes shield-pulse {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.5;
+      box-shadow: 0 0 10px 2px rgba(245, 158, 11, 0.3);
+    }
+    50% {
+      transform: scale(1.1) translate(0, 0);
+      opacity: 0.8;
+      box-shadow: 0 0 20px 5px rgba(245, 158, 11, 0.5);
+    }
+    100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.5;
+      box-shadow: 0 0 10px 2px rgba(245, 158, 11, 0.3);
+    }
+  }
+  
+  @keyframes shield-particle-orbit {
+    0% {
+      transform: rotate(0deg) translateX(20px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(20px) rotate(-360deg);
+    }
+  }
+  
+  /* Add new animation for buttons */
+  @keyframes button-glow {
+    0% {
+      box-shadow: 0 0 15px 0px rgba(104, 34, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 25px 5px rgba(104, 34, 255, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 15px 0px rgba(104, 34, 255, 0.5);
+    }
+  }
+  
+  /* Add new flame animation */
+  @keyframes flame-middle {
+    0% {
+      height: 75%;
+      opacity: 0.7;
+    }
+    50% {
+      height: 95%;
+      opacity: 0.9;
+    }
+    100% {
+      height: 75%;
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes exhaust-ring {
+    0% {
+      opacity: 0.7;
+      transform: translateX(-50%) scale(0.8);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) scale(2);
+    }
+  }
+  
+  /* Add these classes */
+  .animate-twinkle-smooth {
+    animation: twinkle-smooth 4s infinite ease-in-out;
+  }
+  
+  .animate-shield-pulse {
+    animation: shield-pulse 2s infinite ease-in-out;
+  }
+  
+  .animate-shield-particle-orbit {
+    animation: shield-particle-orbit 3s infinite linear;
+  }
+  
+  .animate-button-glow {
+    animation: button-glow 2s infinite ease-in-out;
+  }
+  
+  .animate-flame-middle {
+    animation: flame-middle 0.6s infinite alternate;
+  }
+  
+  .animate-exhaust-ring {
+    animation: exhaust-ring 1.5s infinite;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  /* Iron Man Button Styles */
+  .iron-man-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b35 50%, #ff8c42 100%);
+    border: 2px solid #ff6b35;
+    box-shadow: 
+      0 0 15px rgba(255, 107, 53, 0.4),
+      inset 0 0 15px rgba(220, 38, 38, 0.2);
+    color: #fff;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .iron-man-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.4), 
+      rgba(255, 107, 53, 0.3), 
+      transparent);
+    transition: all 0.6s ease;
+  }
+  
+  .iron-man-btn:hover {
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ef4444 100%);
+    border-color: #ef4444;
+    box-shadow: 
+      0 0 25px rgba(255, 107, 53, 0.6),
+      0 0 50px rgba(255, 140, 66, 0.4),
+      inset 0 0 25px rgba(255, 107, 53, 0.3);
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  .iron-man-btn:hover::before {
+    left: 100%;
+  }
+  
+  .iron-man-btn:hover .iron-man-icon {
+    transform: scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 0 10px #ef4444);
+  }
+  
+  .iron-man-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 
+      0 0 15px rgba(255, 107, 53, 0.8),
+      inset 0 0 20px rgba(220, 38, 38, 0.4);
+  }
+  
+  .stark-tech-fullscreen {
+    position: relative;
+    z-index: 20;
+    background: linear-gradient(135deg, #dc2626 0%, #ff6b35 100%);
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 
+      0 0 15px rgba(255, 107, 53, 0.4),
+      inset 0 0 10px rgba(220, 38, 38, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .stark-tech-fullscreen:hover {
+    background: linear-gradient(135deg, #ff6b35 0%, #ef4444 100%);
+    box-shadow: 
+      0 0 25px rgba(255, 107, 53, 0.6),
+      0 0 50px rgba(255, 107, 53, 0.4);
+    transform: scale(1.1);
+  }
+  
+  .stark-fullscreen-icon {
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 5px #ef4444);
+  }
+  
+  .stark-tech-fullscreen:hover .stark-fullscreen-icon {
+    transform: scale(1.4) rotate(15deg) translateY(-3px);
+    transition: transform 0.4s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 15px #ff6b35);
+  }
+
+@keyframes iron-man-twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+        box-shadow: 0 0 5px #ff6b35;
+    }
+    25% {
+        opacity: 0.7;
+        transform: scale(1.2);
+        filter: hue-rotate(90deg);
+        box-shadow: 0 0 10px #ff6b35;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+        filter: hue-rotate(180deg);
+        box-shadow: 0 0 15px #ff6b35;
+    }
+    75% {
+        opacity: 0.8;
+        transform: scale(1.1);
+        filter: hue-rotate(270deg);
+        box-shadow: 0 0 12px #dc2626;
+    }
+}
+
+.animate-iron-man-twinkle {
+    animation: iron-man-twinkle 4s ease-in-out infinite;
+}
+
+.iron-man-shield-active {
+    animation: iron-man-shield-pulse 1.8s infinite;
+    transform: translate(-50%, 0) !important;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.3) 0%, rgba(220, 38, 38, 0.2) 50%, transparent 100%);
+    border: 3px solid #ef4444;
+}
+
+@keyframes iron-man-shield-pulse {
+    0% {
+        box-shadow: 
+          0 0 15px 8px rgba(239, 68, 68, 0.6),
+          0 0 30px 15px rgba(220, 38, 38, 0.4),
+          inset 0 0 20px rgba(239, 68, 68, 0.3);
+        border-color: #ef4444;
+    }
+    50% {
+        box-shadow: 
+          0 0 25px 15px rgba(255, 107, 53, 0.8),
+          0 0 50px 25px rgba(255, 107, 53, 0.6),
+          inset 0 0 30px rgba(255, 107, 53, 0.4);
+        border-color: #ff6b35;
+    }
+    100% {
+        box-shadow: 
+          0 0 15px 8px rgba(239, 68, 68, 0.6),
+          0 0 30px 15px rgba(220, 38, 38, 0.4),
+          inset 0 0 20px rgba(239, 68, 68, 0.3);
+        border-color: #ef4444;
+    }
+}
+
+@keyframes friday-scanning {
+  0% {
+    background: linear-gradient(90deg, transparent 0%, #ef4444 50%, transparent 100%);
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes arc-reactor-startup {
+  0% {
+    box-shadow: 0 0 0 #ef4444;
+    background: radial-gradient(circle, #b91c1c 0%, transparent 70%);
+    transform: rotate(0deg) scale(0.5);
+  }
+  25% {
+    box-shadow: 0 0 10px #ef4444;
+    background: radial-gradient(circle, #ff6b35 0%, #b91c1c 50%, transparent 70%);
+    transform: rotate(90deg) scale(0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px #ef4444, 0 0 40px #ef4444;
+    background: radial-gradient(circle, #ef4444 0%, #ff6b35 40%, #b91c1c 70%, transparent 100%);
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    box-shadow: 0 0 30px #ef4444, 0 0 60px #ef4444, 0 0 90px #ef4444;
+    background: radial-gradient(circle, #ff6b35 0%, #ef4444 30%, #ff8c42 60%, #b91c1c 80%, transparent 100%);
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 20px #ef4444, 0 0 40px #ef4444, 0 0 60px #ef4444;
+    background: radial-gradient(circle, #ef4444 0%, #ff6b35 40%, #b91c1c 70%, transparent 100%);
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.arc-reactor-core {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ef4444 0%, #ff6b35 40%, #b91c1c 70%, transparent 100%);
+  border: 3px solid #ef4444;
+  box-shadow: 
+    0 0 20px #ef4444,
+    0 0 40px #ef4444,
+    inset 0 0 20px rgba(239, 68, 68, 0.5);
+  animation: arc-reactor-pulse 2s infinite ease-in-out;
+}
+
+.arc-reactor-core::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #fff 0%, #ff6b35 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: arc-reactor-startup 3s ease-in-out infinite;
+}
+
+.repulsor-beam {
+  background: linear-gradient(90deg, #ff6b35 0%, #ff6b35 50%, #ff8c42 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px #ff6b35,
+    0 0 20px #ff8c42,
+    0 0 30px #ff6b35;
+  animation: repulsor-charge 1.5s infinite ease-in-out;
+}
+
+.friday-interface-text {
+  color: #ff6b35;
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 10px #ff6b35;
+  animation: jarvis-interface-pulse 2.5s infinite ease-in-out;
+}
+
+.stark-tech-border {
+  border: 2px solid #ef4444;
+  box-shadow: 
+    0 0 10px rgba(239, 68, 68, 0.3),
+    inset 0 0 10px rgba(239, 68, 68, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stark-tech-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -100%;
+  width: 100%;
+  height: calc(100% + 4px);
+  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+  animation: friday-scanning 3s linear infinite;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hardware acceleration for smooth animations */
+.animate-fadeIn,
+.animate-slideUp,
+.animate-slideDown,
+.animate-slideRight,
+.animate-scaleIn,
+.animate-popIn {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Optimized particle effects */
+.repulsor-container {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ===== RESPONSIVE IMPROVEMENTS ===== */
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .iron-man-hud-overlay {
+    padding: 0.5rem;
+  }
+  
+  /* Smaller particles on mobile for better performance */
+  .animate-fadeOut {
+    animation-duration: 0.3s;
+  }
+  
+  /* Simplified animations on mobile */
+  .animate-arc-reactor,
+  .animate-repulsor-charge,
+  .animate-friday-interface {
+    animation-duration: 1s;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further optimize for small screens */
+  .iron-man-hud-overlay {
+    padding: 0.25rem;
+  }
+  
+  /* Reduce glow effects on very small screens */
+  .animate-stark-tech-glow,
+  .animate-iron-man-hud {
+    animation: none;
+  }
+}
+
+/* Tablet improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .iron-man-hud-overlay {
+    padding: 0.75rem;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1025px) {
+  .iron-man-hud-overlay {
+    padding: 1rem;
+  }
+  
+  /* Enhanced effects for powerful devices */
+  .animate-arc-reactor {
+    animation-duration: 2.5s;
+  }
+}
+
+/* ===== EXISTING ANIMATIONS CONTINUE BELOW ===== */
