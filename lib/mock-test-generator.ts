@@ -8,7 +8,7 @@ export interface MockTestQuestion {
   explanation: string
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyCgYno9IqtTqF3rmxQpsV4gIypk7tWtbD4"
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY)
 
 async function generateContent(prompt: string): Promise<string> {

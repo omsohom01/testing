@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
 // Initialize the Gemini API with the API key
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyCgYno9IqtTqF3rmxQpsV4gIypk7tWtbD4"
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY)
 
 export async function POST(req: NextRequest) {
